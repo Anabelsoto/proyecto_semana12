@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-12">
-                    <h1>Edit Doctor</h1>
+                    <h1>Create Usuario</h1>
                 </div>
             </div>
         </div>
@@ -17,20 +17,22 @@
 
         <div class="card">
 
-            {!! Form::model($doctor, ['route' => ['doctors.update', $doctor->iddoctor], 'method' => 'patch']) !!}
+            {!! Form::open(['route' => 'usuarios.store']) !!}
 
             <div class="card-body">
+
                 <div class="row">
-                    @include('doctors.fields')
+                    @include('usuarios.fields')
                 </div>
+
             </div>
 
             <div class="card-footer">
                 {!! Form::submit('Save', ['class' => 'btn btn-primary']) !!}
-                <a href="{{ route('doctors.index') }}" class="btn btn-default">Cancel</a>
+                <a href="{{ route('usuarios.index') }}" class="btn btn-default">Cancel</a>
             </div>
 
-           {!! Form::close() !!}
+            {!! Form::close() !!}
 
         </div>
     </div>

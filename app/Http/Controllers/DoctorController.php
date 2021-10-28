@@ -139,7 +139,7 @@ class DoctorController extends AppBaseController
      */
     public function destroy($id)
     {
-        $doctor = $this->doctorRepository->find($id);
+        $doctor = $this->doctorRepository->find($iddoctor);
 
         if (empty($doctor)) {
             Flash::error('Doctor not found');
@@ -147,7 +147,7 @@ class DoctorController extends AppBaseController
             return redirect(route('doctors.index'));
         }
 
-        $this->doctorRepository->delete($id);
+        $this->doctorRepository->delete($iddoctor);
 
         Flash::success('Doctor deleted successfully.');
 

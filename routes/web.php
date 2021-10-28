@@ -44,4 +44,24 @@ Route::put('/tareas/actualizar', 'VueDController@update');
 Route::post('/tareas/guardar', 'VueDController@store');
 Route::delete('/tareas/borrar/{iddoctor}', 'VueDController@destroy');
 Route::get('/tareas/buscar', 'VueDController@show');
+Route::resource('vuedoctor', 'VueDController');
 Route::resource('doctors', 'DoctorController');
+
+
+
+Route::get('/tareas', 'VuePController@lista');
+Route::put('/tareas/actualizar', 'VuePController@update');
+Route::post('/tareas/guardar', 'VuePController@store');
+Route::delete('/tareas/borrar/{idpaciente}', 'VuePController@destroy');
+Route::get('/tareas/buscar', 'VuePController@show');
+Route::resource('vuepaciente', 'VuePController');
+Route::resource('pacientes', 'PacienteController');
+
+
+Route::get('/tareas', 'VueUController@lista');
+Route::put('/tareas/actualizar', 'VueUController@update');
+Route::post('/tareas/guardar', 'VueUController@store');
+Route::delete('/tareas/borrar/{idusuario}', 'VueUController@destroy');
+Route::get('/tareas/buscar', 'VueUController@show');
+Route::resource('vueusuario', 'VueUController');
+Route::resource('usuarios', 'UsuarioController');

@@ -12,12 +12,10 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 Vue.component('formulario1-component', require('./components/Formulario1Component.vue').default);
 Vue.component('formulario2-component', require('./components/Formulario2Component.vue').default);
 Vue.component('formulario3-component', require('./components/Formulario3Component.vue').default);
+Vue.component('formulario4-component', require('./components/Formulario4Component.vue').default);
+Vue.component('formulario5-component', require('./components/Formulario5Component.vue').default);
 
 
 const app = new Vue({
     el: '#app',
-});
-
-const app1 = new Vue({
-    el: '#app1',
 });

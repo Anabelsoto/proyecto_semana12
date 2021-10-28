@@ -41,3 +41,32 @@
     </a>
 </li>
 
+<li class="nav-item">
+    <a href="{{ route('pacientes.index') }}"
+       class="nav-link {{ Request::is('pacientes*') ? 'active' : '' }}">
+        <p>Pacientes</p>
+    </a>
+</li>
+
+
+<li class="nav-item">
+    <a href="{{ route('vuepaciente.index') }}"
+       class="nav-link {{ Request::is('vuepaciente*') ? 'active' : '' }}">
+        <p>Vue Paciente</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('usuarios.index') }}"
+       class="nav-link {{ Request::is('usuarios*') ? 'active' : '' }}">
+        <p>Usuarios</p>
+    </a>
+</li>
+
+<li class="nav-item">
+    <a href="{{ route('vueusuario.index') }}"
+       class="nav-link {{ Request::is('vueusuario*') ? 'active' : '' }}">
+        <p>Vue Usuario</p>
+    </a>
+</li>
+
