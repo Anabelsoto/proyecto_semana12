@@ -17,7 +17,7 @@ class VueDController extends Controller
     {
         //$clientes = $this->clienteRepository->all();
         $mensajeeloquent="Hola esta funcionando";
-        return view('vuedoctor.index',compact( 'mensajeeloquent'))        ;
+        return view('vuedoctor.index',compact( 'mensajeeloquent')) ;
     }
 
     public function lista(Request $request)

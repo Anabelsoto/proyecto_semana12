@@ -2174,7 +2174,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getTasks: function getTasks() {
       var me = this;
-      var url = '/tareas'; //Ruta que hemos creado para que nos devuelva todas las tareas
+      var url = '/citadet'; //Ruta que hemos creado para que nos devuelva todas las citadet
 
       axios.get(url).then(function (response) {
         //creamos un array y guardamos el contenido que nos devuelve el response
@@ -2186,7 +2186,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     saveTasks: function saveTasks() {
       var me = this;
-      var url = '/tareas/guardar'; //Ruta que hemos creado para enviar una tarea y guardarla
+      var url = '/citadet/guardar'; //Ruta que hemos creado para enviar una tarea y guardarla
 
       axios.post(url, {
         //estas variables son las que enviaremos para que crear la tarea
@@ -2203,7 +2203,7 @@ __webpack_require__.r(__webpack_exports__);
       /*Esta funcion, es igual que la anterior, solo que tambien envia la variable update que contiene el id de la
       tarea que queremos modificar*/
       var me = this;
-      axios.put('/tareas/actualizar', {
+      axios.put('/citadet/actualizar', {
         'idcita_detalle': this.update,
         'id_cita': this.id_cita
       }).then(function (response) {
@@ -2218,7 +2218,7 @@ __webpack_require__.r(__webpack_exports__);
       //Esta función rellena los campos y la variable update, con la tarea que queremos modificar
       this.update = data.idcita_detalle;
       var me = this;
-      var url = '/tareas/buscar?idcita_detalle=' + this.update;
+      var url = '/citadet/buscar?idcita_detalle=' + this.update;
       axios.get(url).then(function (response) {
         me.id_cita = response.data.id_cita;
       })["catch"](function (error) {
@@ -2232,7 +2232,7 @@ __webpack_require__.r(__webpack_exports__);
       var task_id = data.idcita_detalle;
 
       if (confirm('¿Seguro que deseas borrar esta tarea?')) {
-        axios["delete"]('/tareas/borrar/' + task_id).then(function (response) {
+        axios["delete"]('/citadet/borrar/' + task_id).then(function (response) {
           me.getTasks();
         })["catch"](function (error) {
           console.log(error);
@@ -2512,7 +2512,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getTasks: function getTasks() {
       var me = this;
-      var url = '/tareas'; //Ruta que hemos creado para que nos devuelva todas las tareas
+      var url = '/tareasp'; //Ruta que hemos creado para que nos devuelva todas las tareasp
 
       axios.get(url).then(function (response) {
         //creamos un array y guardamos el contenido que nos devuelve el response
@@ -2524,7 +2524,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     saveTasks: function saveTasks() {
       var me = this;
-      var url = '/tareas/guardar'; //Ruta que hemos creado para enviar una tarea y guardarla
+      var url = '/tareasp/guardar'; //Ruta que hemos creado para enviar una tarea y guardarla
 
       axios.post(url, {
         //estas variables son las que enviaremos para que crear la tarea
@@ -2543,7 +2543,7 @@ __webpack_require__.r(__webpack_exports__);
       /*Esta funcion, es igual que la anterior, solo que tambien envia la variable update que contiene el id de la
       tarea que queremos modificar*/
       var me = this;
-      axios.put('/tareas/actualizar', {
+      axios.put('/tareasp/actualizar', {
         'idpaciente': this.update,
         'ape_nom': this.ape_nom,
         'dni': this.dni,
@@ -2560,7 +2560,7 @@ __webpack_require__.r(__webpack_exports__);
       //Esta función rellena los campos y la variable update, con la tarea que queremos modificar
       this.update = data.idpaciente;
       var me = this;
-      var url = '/tareas/buscar?idpaciente=' + this.update;
+      var url = '/tareasp/buscar?idpaciente=' + this.update;
       axios.get(url).then(function (response) {
         me.ape_nom = response.data.ape_nom;
         me.dni = response.data.dni;
@@ -2576,7 +2576,7 @@ __webpack_require__.r(__webpack_exports__);
       var task_id = data.idpaciente;
 
       if (confirm('¿Seguro que deseas borrar esta tarea?')) {
-        axios["delete"]('/tareas/borrar/' + task_id).then(function (response) {
+        axios["delete"]('/tareasp/borrar/' + task_id).then(function (response) {
           me.getTasks();
         })["catch"](function (error) {
           console.log(error);
@@ -2685,7 +2685,7 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     getTasks: function getTasks() {
       var me = this;
-      var url = '/tareas'; //Ruta que hemos creado para que nos devuelva todas las tareas
+      var url = '/usuario'; //Ruta que hemos creado para que nos devuelva todas las usuario
 
       axios.get(url).then(function (response) {
         //creamos un array y guardamos el contenido que nos devuelve el response
@@ -2697,7 +2697,7 @@ __webpack_require__.r(__webpack_exports__);
     },
     saveTasks: function saveTasks() {
       var me = this;
-      var url = '/tareas/guardar'; //Ruta que hemos creado para enviar una tarea y guardarla
+      var url = '/usuario/guardar'; //Ruta que hemos creado para enviar una tarea y guardarla
 
       axios.post(url, {
         //estas variables son las que enviaremos para que crear la tarea
@@ -2716,7 +2716,7 @@ __webpack_require__.r(__webpack_exports__);
       /*Esta funcion, es igual que la anterior, solo que tambien envia la variable update que contiene el id de la
       tarea que queremos modificar*/
       var me = this;
-      axios.put('/tareas/actualizar', {
+      axios.put('/usuario/actualizar', {
         'idusuario': this.update,
         'ape_nom': this.ape_nom,
         'usuario': this.usuario,
@@ -2733,7 +2733,7 @@ __webpack_require__.r(__webpack_exports__);
       //Esta función rellena los campos y la variable update, con la tarea que queremos modificar
       this.update = data.idusuario;
       var me = this;
-      var url = '/tareas/buscar?idusuario=' + this.update;
+      var url = '/usuario/buscar?idusuario=' + this.update;
       axios.get(url).then(function (response) {
         me.ape_nom = response.data.ape_nom;
         me.usuario = response.data.usuario;
@@ -2749,7 +2749,7 @@ __webpack_require__.r(__webpack_exports__);
       var task_id = data.idusuario;
 
       if (confirm('¿Seguro que deseas borrar esta tarea?')) {
-        axios["delete"]('/tareas/borrar/' + task_id).then(function (response) {
+        axios["delete"]('/usuario/borrar/' + task_id).then(function (response) {
           me.getTasks();
         })["catch"](function (error) {
           console.log(error);
@@ -38706,7 +38706,7 @@ var render = function () {
   return _c("div", { staticClass: "container container-task" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
-        _c("h2", [_vm._v("Lista de tareas")]),
+        _c("h2", [_vm._v("Lista de Cita Detalle")]),
         _vm._v(" "),
         _c("table", { staticClass: "table text-center" }, [
           _vm._m(0),
@@ -38834,7 +38834,7 @@ var staticRenderFns = [
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
     return _c("thead", [
-      _c("tr", [_c("th", { attrs: { scope: "col" } }, [_vm._v("id_cita")])]),
+      _c("tr", [_c("th", { attrs: { scope: "col" } }, [_vm._v("id cita")])]),
     ])
   },
 ]
@@ -38862,7 +38862,7 @@ var render = function () {
   return _c("div", { staticClass: "container container-task" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
-        _c("h2", [_vm._v("Lista de tareas")]),
+        _c("h2", [_vm._v("Lista de Doctores")]),
         _vm._v(" "),
         _c("table", { staticClass: "table text-center" }, [
           _vm._m(0),
@@ -39084,7 +39084,7 @@ var render = function () {
   return _c("div", { staticClass: "container container-task" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
-        _c("h2", [_vm._v("Lista de tareas")]),
+        _c("h2", [_vm._v("Lista de Pacientes")]),
         _vm._v(" "),
         _c("table", { staticClass: "table text-center" }, [
           _vm._m(0),
@@ -39304,7 +39304,7 @@ var render = function () {
   return _c("div", { staticClass: "container container-task" }, [
     _c("div", { staticClass: "row" }, [
       _c("div", { staticClass: "col-md-6" }, [
-        _c("h2", [_vm._v("Lista de tareas")]),
+        _c("h2", [_vm._v("Lista de usuario")]),
         _vm._v(" "),
         _c("table", { staticClass: "table text-center" }, [
           _vm._m(0),

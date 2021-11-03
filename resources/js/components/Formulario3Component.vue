@@ -2,7 +2,7 @@
     <div class="container container-task">
         <div class="row">
             <div class="col-md-6">
-                <h2>Lista de tareas</h2>
+                <h2>Lista de Doctores</h2>
                 <table class="table text-center"><!--Creamos una tabla que mostrará todas las tareas-->
                         <thead>
                             <tr>

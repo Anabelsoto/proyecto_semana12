@@ -2,7 +2,7 @@
     <div class="container container-task">
         <div class="row">
             <div class="col-md-6">
-                <h2>Lista de tareas</h2>
+                <h2>Lista de Pacientes</h2>
                 <table class="table text-center"><!--Creamos una tabla que mostrará todas las tareas-->
                         <thead>
                             <tr>
@@ -73,7 +73,7 @@
         methods:{
             getTasks(){
                 let me =this;
-                let url = '/tareas' //Ruta que hemos creado para que nos devuelva todas las tareas
+                let url = '/tareasp' //Ruta que hemos creado para que nos devuelva todas las tareasp
                 axios.get(url).then(function (response) {
                     //creamos un array y guardamos el contenido que nos devuelve el response
                     me.arrayTasks = response.data;
@@ -85,7 +85,7 @@
             },
             saveTasks(){
                 let me =this;
-                let url = '/tareas/guardar' //Ruta que hemos creado para enviar una tarea y guardarla
+                let url = '/tareasp/guardar' //Ruta que hemos creado para enviar una tarea y guardarla
                 axios.post(url,{ //estas variables son las que enviaremos para que crear la tarea
                     'ape_nom':this.ape_nom,
                     'dni':this.dni,
@@ -103,7 +103,7 @@
             updateTasks(){/*Esta funcion, es igual que la anterior, solo que tambien envia la variable update que contiene el id de la
                 tarea que queremos modificar*/
                 let me = this;
-                axios.put('/tareas/actualizar',{
+                axios.put('/tareasp/actualizar',{
                     'idpaciente':this.update,
                     'ape_nom':this.ape_nom,
                     'dni':this.dni,
@@ -120,7 +120,7 @@
             loadFieldsUpdate(data){ //Esta función rellena los campos y la variable update, con la tarea que queremos modificar
                 this.update = data.idpaciente
                 let me =this;
-                let url = '/tareas/buscar?idpaciente='+this.update;
+                let url = '/tareasp/buscar?idpaciente='+this.update;
                 axios.get(url).then(function (response) {
                     me.ape_nom= response.data.ape_nom;
                     me.dni= response.data.dni;
@@ -136,7 +136,7 @@
                 let me =this;
                 let task_id = data.idpaciente
                 if (confirm('¿Seguro que deseas borrar esta tarea?')) {
-                    axios.delete('/tareas/borrar/'+task_id
+                    axios.delete('/tareasp/borrar/'+task_id
                     ).then(function (response) {
                         me.getTasks();
                     })

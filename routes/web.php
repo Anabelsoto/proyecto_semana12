@@ -29,39 +29,39 @@ Route::get('/tareas/buscar', 'VueCController@show');
 Route::resource('vuecita', 'VueCController');
 
 
-Route::get('/tareas', 'VueCDController@lista');
-Route::put('/tareas/actualizar', 'VueCDController@update');
-Route::post('/tareas/guardar', 'VueCDController@store');
-Route::delete('/tareas/borrar/{idcita_detalle}', 'VueCDController@destroy');
-Route::get('/tareas/buscar', 'VueCDController@show');
+Route::get('/citadet', 'VueCDController@lista');
+Route::put('/citadet/actualizar', 'VueCDController@update');
+Route::post('/citadet/guardar', 'VueCDController@store');
+Route::delete('/citadet/borrar/{idcita_detalle}', 'VueCDController@destroy');
+Route::get('/citadet/buscar', 'VueCDController@show');
 Route::resource('vuecita_detalle', 'VueCDController');
 Route::resource('citaDetalles', 'Cita_detalleController');
 
 
 
-Route::get('/tareas', 'VueDController@lista');
-Route::put('/tareas/actualizar', 'VueDController@update');
-Route::post('/tareas/guardar', 'VueDController@store');
-Route::delete('/tareas/borrar/{iddoctor}', 'VueDController@destroy');
-Route::get('/tareas/buscar', 'VueDController@show');
+Route::get('/tareasd', 'VueDController@lista');
+Route::put('/tareasd/actualizar', 'VueDController@update');
+Route::post('/tareasd/guardar', 'VueDController@store');
+Route::delete('/tareasd/borrar/{iddoctor}', 'VueDController@destroy');
+Route::get('/tareasd/buscar', 'VueDController@show');
 Route::resource('vuedoctor', 'VueDController');
 Route::resource('doctors', 'DoctorController');
 
 
 
-Route::get('/tareas', 'VuePController@lista');
-Route::put('/tareas/actualizar', 'VuePController@update');
-Route::post('/tareas/guardar', 'VuePController@store');
-Route::delete('/tareas/borrar/{idpaciente}', 'VuePController@destroy');
-Route::get('/tareas/buscar', 'VuePController@show');
+Route::get('/tareasp', 'VuePController@lista');
+Route::put('/tareasp/actualizar', 'VuePController@update');
+Route::post('/tareasp/guardar', 'VuePController@store');
+Route::delete('/tareasp/borrar/{idpaciente}', 'VuePController@destroy');
+Route::get('/tareasp/buscar', 'VuePController@show');
 Route::resource('vuepaciente', 'VuePController');
 Route::resource('pacientes', 'PacienteController');
 
 
-Route::get('/tareas', 'VueUController@lista');
-Route::put('/tareas/actualizar', 'VueUController@update');
-Route::post('/tareas/guardar', 'VueUController@store');
-Route::delete('/tareas/borrar/{idusuario}', 'VueUController@destroy');
-Route::get('/tareas/buscar', 'VueUController@show');
+Route::get('/usario', 'VueUController@lista');
+Route::put('/usario/actualizar', 'VueUController@update');
+Route::post('/usario/guardar', 'VueUController@store');
+Route::delete('/usario/borrar/{idusuario}', 'VueUController@destroy');
+Route::get('/usario/buscar', 'VueUController@show');
 Route::resource('vueusuario', 'VueUController');
 Route::resource('usuarios', 'UsuarioController');

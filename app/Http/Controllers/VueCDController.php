@@ -15,9 +15,14 @@ class VueCDController extends Controller
 
     public function index(Request $request)
     {
-        //$clientes = $this->clienteRepository->all();
+        /*//$clientes = $this->clienteRepository->all();
         $mensajeeloquent="Hola esta funcionando";
-        return view('vuecita_detalle.index',compact( 'mensajeeloquent'))        ;
+        return view('vuecita_detalle.index',compact( 'mensajeeloquent')) ;*/
+        if($request->ajax()){
+            return Cita_detalle::where('user_id', auth()->id())->get();
+        }else{
+            return view('vuecita_detalle/index');
+        }
     }
 
     public function lista(Request $request)

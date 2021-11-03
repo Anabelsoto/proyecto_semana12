@@ -22,8 +22,8 @@ class VuePController extends Controller
 
     public function lista(Request $request)
     {
-        $usuario = Usuario::all();
-        return $usuario;
+        $paciente = Paciente::all();
+        return $paciente;
         //Esta función nos devolvera todas las tareas que tenemos en nuestra BD
     }
 

@@ -31,7 +31,7 @@ class CitaController extends AppBaseController
     {
         $citas = $this->citaRepository->all();
 
-        return view('citas.index')
+        return view('citas/index')//.........................................................................../
             ->with('citas', $citas);
     }
 

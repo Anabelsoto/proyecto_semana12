@@ -2,11 +2,11 @@
     <div class="container container-task">
         <div class="row">
             <div class="col-md-6">
-                <h2>Lista de tareas</h2>
+                <h2>Lista de Cita Detalle</h2>
                 <table class="table text-center"><!--Creamos una tabla que mostrará todas las tareas-->
                         <thead>
                             <tr>
-                                <th scope="col">id_cita</th>
+                                <th scope="col">id cita</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -56,7 +56,7 @@
         methods:{
             getTasks(){
                 let me =this;
-                let url = '/tareas' //Ruta que hemos creado para que nos devuelva todas las tareas
+                let url = '/citadet' //Ruta que hemos creado para que nos devuelva todas las citadet
                 axios.get(url).then(function (response) {
                     //creamos un array y guardamos el contenido que nos devuelve el response
                     me.arrayTasks = response.data;
@@ -68,7 +68,7 @@
             },
             saveTasks(){
                 let me =this;
-                let url = '/tareas/guardar' //Ruta que hemos creado para enviar una tarea y guardarla
+                let url = '/citadet/guardar' //Ruta que hemos creado para enviar una tarea y guardarla
                 axios.post(url,{ //estas variables son las que enviaremos para que crear la tarea
                     'id_cita':this.id_cita,
 
@@ -84,7 +84,7 @@
             updateTasks(){/*Esta funcion, es igual que la anterior, solo que tambien envia la variable update que contiene el id de la
                 tarea que queremos modificar*/
                 let me = this;
-                axios.put('/tareas/actualizar',{
+                axios.put('/citadet/actualizar',{
                     'idcita_detalle':this.update,
                     'id_cita':this.id_cita,
 
@@ -99,7 +99,7 @@
             loadFieldsUpdate(data){ //Esta función rellena los campos y la variable update, con la tarea que queremos modificar
                 this.update = data.idcita_detalle
                 let me =this;
-                let url = '/tareas/buscar?idcita_detalle='+this.update;
+                let url = '/citadet/buscar?idcita_detalle='+this.update;
                 axios.get(url).then(function (response) {
                     me.id_cita= response.data.id_cita;
 
@@ -113,7 +113,7 @@
                 let me =this;
                 let task_id = data.idcita_detalle
                 if (confirm('¿Seguro que deseas borrar esta tarea?')) {
-                    axios.delete('/tareas/borrar/'+task_id
+                    axios.delete('/citadet/borrar/'+task_id
                     ).then(function (response) {
                         me.getTasks();
                     })

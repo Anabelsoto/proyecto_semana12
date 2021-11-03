@@ -15,9 +15,14 @@ class VueCController extends Controller
 
     public function index(Request $request)
     {
-        //$clientes = $this->clienteRepository->all();
+       /* //$clientes = $this->clienteRepository->all();
         $mensajeeloquent="Hola esta funcionando";
-        return view('vuecita.index',compact( 'mensajeeloquent'))        ;
+        return view('vuecita.index',compact( 'mensajeeloquent')) ;*/  
+        if($request->ajax()){
+            return Cita::where('user_id', auth()->id())->get();
+        }else{
+            return view('vuecita/index');
+        }
     }
 
     public function lista(Request $request)
